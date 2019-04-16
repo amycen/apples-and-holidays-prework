@@ -62,6 +62,7 @@ def all_supplies_in_holidays(holiday_hash)
     puts season.to_s.split.capitalize!.join
     holiday.each do |hol, item|
       puts hol.to_s.capitalize! + hol.values.capitalize!.join(", ")
+      binding.pry
     end
   end
 end
@@ -71,3 +72,20 @@ def all_holidays_with_bbq(holiday_hash)
   # include the string "BBQ"
 
 end
+
+holiday_supplies = {
+  :winter => {
+    :christmas => ["Lights", "Wreath"],
+    :new_years => ["Party Hats"]
+  },
+  :summer => {
+    :fourth_of_july => ["Fireworks", "BBQ"]
+  },
+  :fall => {
+    :thanksgiving => ["Turkey"]
+  },
+  :spring => {
+    :memorial_day => ["BBQ"]
+  }
+}
+all_supplies_in_holidays(holiday_supplies)
